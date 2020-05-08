@@ -85,6 +85,31 @@ class Foo{
 
 }
 
+//Provides access to the specified theme support item
+add_theme_support("menus");
+add_theme_support("post-thumbnails");
+
+//Controls image thumbnails sizes
+add_image_size('smallest',300,300,true);
+add_image_size('largest',300,300,true);
+
+
+
+//Now we want to specify a menu location
+//register_nav_menus( array $locations = array() )
+register_nav_menus(
+
+      array(
+              "top-menu" => __('Top Menu','theme'),
+                "footer-menu" => __('Footer Menu','theme'),
+      )
+
+
+);
+
+
+
+
 //new Foo();
 
 
