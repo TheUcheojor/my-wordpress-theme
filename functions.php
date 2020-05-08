@@ -12,6 +12,7 @@ class StyleSheets{
 
         //The action I am doing is to at a stylesheet
         add_action('wp_enqueue_scripts',array($this, 'loadStyleSheets'));
+        add_action("wp_enqueue_scripts", array($this,'includeJQuery'));
         add_action('wp_enqueue_scripts',array($this, 'loadJavaScripts'));
 
   }
@@ -37,7 +38,6 @@ class StyleSheets{
     //BASICS: wp_register_style( [ Name of the stylesheet],  [FULL URL OF StyleSheets]  , [ DEFUALT: array()--->An array of registered stylesheet handles this stylesheet depends on],[ DEFAULT: null ------> Version - String specifying stylesheet version number], [DEFAULT: 'false'  ---> In footer ] )
     //SAMPLE:wp_register_script( string $handle, string|bool $src, string[] $deps = array(), string|bool|null $ver = false, bool $in_footer = false )
 
-        add_action("wp_enqueue_scripts", array($this,'includeJQuery'));
 
         wp_register_script("paulScript",get_template_directory_uri().'/js/paulScript.js','',1,true );
 
